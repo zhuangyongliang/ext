@@ -16,7 +16,10 @@ public class AcmeModeledDoc extends _AcmeModeledDoc {
     static final long serialVersionUID = 1;
     public static AcmeModeledDoc newAcmeModeledDoc() throws WTException {
         AcmeModeledDoc instance = new AcmeModeledDoc();
-        instance.initialize();
+        
+        instance.initialize(); 
+        
         return instance;
     }
 }
+

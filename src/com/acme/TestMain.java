@@ -23,6 +23,7 @@ public class TestMain {
             myPet.setFixed(true);
             PersistenceHelper.manager.save(myPet);
             
+            
            
         } catch (WTException e) {
             // TODO Auto-generated catch block
