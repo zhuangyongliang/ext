@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+
+<%@page import="wt.log4j.LogR"%>
+<%@page import="com.ext.example.wizard.util.MRCreationWizardUtils"%>
+
+<%!
+  private static org.apache.log4j.Logger Log = LogR.getLogger("tasks.com.ext.example.wizard.GetTemplateDocuments");
+%>
+    
+<%
+    String templateSubtype = MRCreationWizardUtils.getTemplateSubtype();
+    System.out.println("subType="+ templateSubtype);
+%>
+
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" valueSeparator=";" delim=";" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="SESSION_ID" data="${session[]session_id[]}"/>
+    <ie:param name="TYPE" data="<%=templateSubtype %>"/>
+    <ie:param name="WHERE" data="()"/>    
+    <ie:param name="GROUP_OUT" data="allTemplates"/>
+ </ie:webject>
+
+<ie:webject name="Return-Groups" type="GRP">
+    <ie:param name="GROUP_IN" data="allTemplates" delim=","/>
+</ie:webject>

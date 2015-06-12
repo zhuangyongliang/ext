@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configuration  SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ext/config/ext.properties">
+    <AddToProperty name="wt.services.applicationcontext.WTServiceProviderFromProperties.customPropertyFiles" 
+                    value="com/ext/config/ext.properties"/>
+    <Service context="default" name="com.ptc.core.components.suggest.Suggestable">
+        <Option serviceClass="com.ext.example.suggestion.NumberSuggest"
+            selector="NumberSuggest"
+            requestor="java.lang.Object"
+            cardinality="duplicate" />
+    </Service>
+    
+    <Property name="Renault_MRCreationWizard_ElementSubType"     default="com.ptcnet.TO_REPLACE_WITH_ELEMENT_SUBTYPE"     />
+    <Property name="Renault_MRCreationWizard_OperationSubType"   default="com.ptcnet.TO_REPLACE_WITH_OPERATION_SUBTYPE"   />
+    <Property name="Renault_MRCreationWizard_TemplateSubType"    default="com.ptcnet.TO_REPLACE_WITH_TEMPLATE_SUBTYPE"    />
+    <Property name="Renault_MRCreationWizard_TemplateAttributes" default="name,number" />   
+
+</Configuration>
